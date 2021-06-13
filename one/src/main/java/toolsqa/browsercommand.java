@@ -1,6 +1,7 @@
 package toolsqa;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,6 +25,8 @@ public class browsercommand {
 		
 		driver.manage().window().maximize();
 		System.out.println("url : "+driver.getCurrentUrl());
+		
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 
 		}catch (Exception e) {
 	        e.printStackTrace();
